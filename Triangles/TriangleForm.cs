@@ -1,15 +1,15 @@
 namespace Triangles
 {
-    public partial class Form1 : Form
+    public partial class TriangleForm : Form
     {
-        public Form1()
+        public TriangleForm()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
