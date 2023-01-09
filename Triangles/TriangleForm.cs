@@ -10,7 +10,8 @@ namespace Triangles
 
         // The following code was taken from
         // https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.control.keypress?view=windowsdesktop-7.0
-        // and modified to allow a decimal point
+        // and modified to allow a single decimal point. This is the bulk of my validation. The assumption being
+        // that it will be hard to input an invalid double if the user can only input numbers and a single decimal.
 
         // Boolean flag used to determine when a character other than a number is entered.
         private bool nonNumberEntered = false;
@@ -59,6 +60,7 @@ namespace Triangles
                 e.Handled = true;
             }
         }
+
 
         private void ProcessInput(object sender, EventArgs e)
         {

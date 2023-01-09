@@ -40,6 +40,7 @@ namespace Triangles
             this.angleClass = calculateAngleClass();
         }
 
+        // calculate each angle, store it in the same order as the side lengths
         private double[] calculateAngles()
         {
             return new double[] {
@@ -48,11 +49,14 @@ namespace Triangles
                 calculateAngle(this.sides[2], this.sides[0], this.sides[1])};
         }
 
+        // Use law of cosines to calculate an angle based off the side lengths
+        // convert to degrees and round to 5 decimal places. This is probably plenty of decimal places
         private double calculateAngle(double a, double b, double c)
         {
             return Math.Round(Math.Acos((Math.Pow(b, 2) + Math.Pow(c, 2) - Math.Pow(a, 2)) / (2 * b * c)) * 180 / Math.PI, 5);
         }
 
+        // Use triangle inequality theorem to determine if valid or not
         private bool calculateValid()
         {
             var sortedSides = new double[3];
