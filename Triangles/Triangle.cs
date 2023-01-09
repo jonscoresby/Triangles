@@ -98,11 +98,12 @@ namespace Triangles
         {
             if (this.isValid)
             {
-                return "an invalid triangle";
+                return "a valid " + angleClass + " " + sideClass + " triangle";
+                
             }
             else
             {
-                return "a valid " + angleClass + " " + sideClass + " triangle";
+                return "an invalid triangle";
             }
         }
     }
