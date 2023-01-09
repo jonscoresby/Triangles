@@ -32,9 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.OutputLabel = new System.Windows.Forms.Label();
-            this.SideLength_a = new System.Windows.Forms.TextBox();
-            this.SideLength_b = new System.Windows.Forms.TextBox();
-            this.SideLength_c = new System.Windows.Forms.TextBox();
+            this.SideLengthA = new System.Windows.Forms.TextBox();
+            this.SideLengthB = new System.Windows.Forms.TextBox();
+            this.SideLengthC = new System.Windows.Forms.TextBox();
             this.AngleMeasurementsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -74,26 +74,35 @@
             this.OutputLabel.TabIndex = 6;
             this.OutputLabel.Text = "Enter side lengths";
             // 
-            // SideLength_a
+            // SideLengthA
             // 
-            this.SideLength_a.Location = new System.Drawing.Point(96, 12);
-            this.SideLength_a.Name = "SideLength_a";
-            this.SideLength_a.Size = new System.Drawing.Size(100, 23);
-            this.SideLength_a.TabIndex = 7;
+            this.SideLengthA.Location = new System.Drawing.Point(96, 12);
+            this.SideLengthA.Name = "SideLengthA";
+            this.SideLengthA.Size = new System.Drawing.Size(100, 23);
+            this.SideLengthA.TabIndex = 7;
+            this.SideLengthA.TextChanged += new System.EventHandler(this.ProcessInput);
+            this.SideLengthA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
+            this.SideLengthA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
-            // SideLength_b
+            // SideLengthB
             // 
-            this.SideLength_b.Location = new System.Drawing.Point(96, 41);
-            this.SideLength_b.Name = "SideLength_b";
-            this.SideLength_b.Size = new System.Drawing.Size(100, 23);
-            this.SideLength_b.TabIndex = 8;
+            this.SideLengthB.Location = new System.Drawing.Point(96, 41);
+            this.SideLengthB.Name = "SideLengthB";
+            this.SideLengthB.Size = new System.Drawing.Size(100, 23);
+            this.SideLengthB.TabIndex = 8;
+            this.SideLengthB.TextChanged += new System.EventHandler(this.ProcessInput);
+            this.SideLengthB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
+            this.SideLengthB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
-            // SideLength_c
+            // SideLengthC
             // 
-            this.SideLength_c.Location = new System.Drawing.Point(96, 70);
-            this.SideLength_c.Name = "SideLength_c";
-            this.SideLength_c.Size = new System.Drawing.Size(100, 23);
-            this.SideLength_c.TabIndex = 9;
+            this.SideLengthC.Location = new System.Drawing.Point(96, 70);
+            this.SideLengthC.Name = "SideLengthC";
+            this.SideLengthC.Size = new System.Drawing.Size(100, 23);
+            this.SideLengthC.TabIndex = 9;
+            this.SideLengthC.TextChanged += new System.EventHandler(this.ProcessInput);
+            this.SideLengthC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
+            this.SideLengthC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // AngleMeasurementsLabel
             // 
@@ -103,22 +112,21 @@
             this.AngleMeasurementsLabel.Size = new System.Drawing.Size(0, 15);
             this.AngleMeasurementsLabel.TabIndex = 10;
             // 
-            // Form1
+            // TriangleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(258, 221);
             this.Controls.Add(this.AngleMeasurementsLabel);
-            this.Controls.Add(this.SideLength_c);
-            this.Controls.Add(this.SideLength_b);
-            this.Controls.Add(this.SideLength_a);
+            this.Controls.Add(this.SideLengthC);
+            this.Controls.Add(this.SideLengthB);
+            this.Controls.Add(this.SideLengthA);
             this.Controls.Add(this.OutputLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "TriangleForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,9 +138,9 @@
         private Label label2;
         private Label label3;
         private Label OutputLabel;
-        private TextBox SideLength_a;
-        private TextBox SideLength_b;
-        private TextBox SideLength_c;
+        private TextBox SideLengthA;
+        private TextBox SideLengthB;
+        private TextBox SideLengthC;
         private Label AngleMeasurementsLabel;
     }
 }
