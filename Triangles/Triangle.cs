@@ -8,27 +8,27 @@ using System.Threading.Tasks;
 
 namespace Triangles
 {
-    enum Side
+    public enum Side
     {
         scalene,
         isosceles,
         equilateral
     }
 
-    enum Angle
+    public enum Angle
     {
         right,
         acute,
         obtuse
     }
-    internal class Triangle
+    public class Triangle
     {
         
-        double[] sides;
-        double[] angles;
-        bool isValid;
-        Side sideClass;
-        Angle angleClass;
+        public double[] sides;
+        public double[] angles;
+        public bool isValid;
+        public Side sideClass;
+        public Angle angleClass;
 
 
         public Triangle(double a, double b, double c)
@@ -50,15 +50,16 @@ namespace Triangles
 
         private double calculateAngle(double a, double b, double c)
         {
-            return Math.Acos((Math.Pow(b, 2) + Math.Pow(c, 2) - Math.Pow(a, 2)) / (2 * b * c)) * 180 / Math.PI;
+            return Math.Round(Math.Acos((Math.Pow(b, 2) + Math.Pow(c, 2) - Math.Pow(a, 2)) / (2 * b * c)) * 180 / Math.PI, 5);
         }
+
         private bool calculateValid()
         {
             var sortedSides = new double[3];
-            sides.CopyTo(sortedSides, 0);
-            sortedSides.OrderBy((key) => key);
+            this.sides.CopyTo(sortedSides, 0);
+            Array.Sort(sortedSides);
 
-            return sortedSides[0] <= sortedSides[1] + sortedSides[2];
+            return sortedSides[2] < sortedSides[0] + sortedSides[1];
         }
 
         private Side calculateSideClass()
