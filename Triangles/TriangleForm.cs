@@ -19,7 +19,6 @@ namespace Triangles
         // Handle the KeyDown event to determine the type of character entered into the control.
         private void TextBox_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            AngleMeasurementsLabel.Text = ((TextBox)sender).Text;
             // Initialize the flag to false.
             nonNumberEntered = false;
            
@@ -66,11 +65,21 @@ namespace Triangles
             if (SideLengthA.Text == "" || SideLengthB.Text == "" || SideLengthC.Text == "")
             {
                 OutputLabel.Text = "Enter side lengths";
+                AngleA.Text = "";
+                AngleB.Text = "";
+                AngleC.Text = "";
             }
             else if(double.TryParse(SideLengthA.Text,out double a) && double.TryParse(SideLengthB.Text, out double b) && double.TryParse(SideLengthC.Text, out double c))
             {
                 Triangle triangle = new(a, b, c);
-                OutputLabel.Text = triangle.ToString();
+                OutputLabel.Text = "These side lengths produce " + triangle.ToString();
+
+                if (triangle.isValid)
+                {
+                    AngleA.Text = "\u2220A: " + triangle.angles[0].ToString();
+                    AngleB.Text = "\u2220B: " + triangle.angles[1].ToString();
+                    AngleC.Text = "\u2220C: " + triangle.angles[2].ToString();
+                }
             }
             else
             {
